@@ -29,6 +29,6 @@ public interface BagCategoryRepository extends JpaRepository<BagCategory, Intege
 
     @Query(value = "select top 5 * from bag_categories where "
             + "name like :keyword or bag_category_id like :keyword", nativeQuery = true)
-    List<BagCategory> searchBagCaterogyALikeByKeyword(@Param("keyword") String keyword);
+    List<BagCategory> searchBagCategoryALikeByKeyword(@Param("keyword") String keyword);
 
 }
