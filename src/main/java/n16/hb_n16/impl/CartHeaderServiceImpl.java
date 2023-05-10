@@ -1,9 +1,9 @@
-package n16.hb_n16.service.impl;
+package n16.hb_n16.impl;
 
 import n16.hb_n16.entity.CartDetail;
 import n16.hb_n16.entity.CartHeader;
 import n16.hb_n16.repository.CartHeaderRepository;
-import n16.hb_n16.service.CartHeaderService;
+import n16.hb_n16.services.CartHeaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class CartHeaderServiceImpl implements CartHeaderService {
     @Autowired
-    CartHeaderRepository cartHeaderRepository;
+    private CartHeaderRepository cartHeaderRepository;
 
     @Override
     public List<CartHeader> getAllCartHeader() {

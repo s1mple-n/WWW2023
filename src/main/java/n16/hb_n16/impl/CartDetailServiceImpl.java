@@ -1,8 +1,8 @@
-package n16.hb_n16.service.impl;
+package n16.hb_n16.impl;
 
 import n16.hb_n16.entity.CartDetail;
 import n16.hb_n16.repository.CartDetailRepository;
-import n16.hb_n16.service.CartDetailService;
+import n16.hb_n16.services.CartDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
