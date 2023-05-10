@@ -10,22 +10,22 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CartDetailRepository extends JpaRepository<CartDetail, Integer> {
-    @Query("from CartDetail where cart_header_id = :cartID")
+    @Query(value = "from CartDetail where cart_header_id = :cartID",nativeQuery = true)
     List<CartDetail> getCartDetailsByCartHeaderID(@Param("cartID") int cartID);
 
-    @Query("from CartDetail where bag_id = :bagID")
+    @Query(value = "from CartDetail where bag_id = :bagID",nativeQuery = true)
     List<CartDetail> getCartDetailsByBagID(@Param("bagID") int bagID);
 
-    @Query("from CartDetail where cart_header_id = :cartID AND bag_id = :bagID")
+    @Query(value ="from CartDetail where cart_header_id = :cartID AND bag_id = :bagID",nativeQuery = true)
     CartDetail getCartDetailByCartHeaderIdAndBagId(@Param("cartID") int cartID, @Param("bagID") int bagID);
 
     @Modifying
     @Transactional
-    @Query("delete from CartDetail where cart_header_id = :cartID")
+    @Query(value ="delete from CartDetail where cart_header_id = :cartID",nativeQuery = true)
     void deleteCartDetailByCartHeaderId(@Param("cartID") int cartID);
 
     @Modifying
     @Transactional
-    @Query("delete from CartDetail where cart_header_id = :cartID AND bag_id = :bagID")
+    @Query(value ="delete from CartDetail where cart_header_id = :cartID AND bag_id = :bagID",nativeQuery = true)
     void deleteCartDetailByCartHeaderIdAndBagId(@Param("cartID") int cartID, @Param("bagID") int bagID);
 }

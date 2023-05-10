@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface BagReviewRepository extends JpaRepository<BagReview,Integer> {
-    @Query("from BagReview where bag_id = :bagID")
+    @Query(value = "from BagReview where bag_id = :bagID",nativeQuery = true)
     List<BagReview> getBagReviewsByBagID(@Param("bagID") int bagID);
 }
