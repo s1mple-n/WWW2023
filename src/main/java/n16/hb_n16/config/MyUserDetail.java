@@ -1,8 +1,8 @@
 package n16.hb_n16.config;
 
+import n16.hb_n16.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
@@ -21,8 +21,10 @@ public class MyUserDetail implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-      //  return asList(new SimpleGrantedAuthority("ROLE_" + user.getRole().toUpperCase()));
+       return asList(new SimpleGrantedAuthority("ROLE_" + user.getRole().toUpperCase()));
     }
+
+
 
     @Override
     public String getPassword() {
