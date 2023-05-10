@@ -1,72 +1,91 @@
 package n16.hb_n16.impl;
 
 import n16.hb_n16.entity.BagCategory;
+import n16.hb_n16.repository.BagCategoryRepository;
 import n16.hb_n16.services.BagCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
-
+@Service
 public class BagCategoryServiceImpl implements BagCategoryService {
+    @Autowired
+    private BagServiceImpl bagServiceImpl;
+    @Autowired
+    private BagCategoryRepository bagCategoryRepository;
 
 
     @Override
     public List<BagCategory> getAllBagCategories() {
-        return null;
+        return bagCategoryRepository.findAll();
     }
 
     @Override
-    public BagCategory getBagCategoryByID(int bagCategory) {
-        return null;
+    public BagCategory getBagCategoryByID(int bagCategoryID) {
+        return bagCategoryRepository.findById(bagCategoryID).get();
     }
 
     @Override
     public void addUpdateBagCategory(BagCategory bagCategory) {
-
+        bagCategoryRepository.save(bagCategory);
     }
 
     @Override
     public List<BagCategory> getBagCategoriesByName(String name) {
-        return null;
+        return bagCategoryRepository.getBagCategoriesByName(name);
     }
 
     @Override
     public List<BagCategory> getBagCategoriesLikeName(String name) {
-        return null;
+        return bagCategoryRepository.getBagCategoriesLikeName("%" +name + "%" );
     }
 
     @Override
     public List<BagCategory> getBagCategoriesByImportDate(LocalDate importDate) {
-        return null;
+        return bagCategoryRepository.getBagCategoriesByImportDate(importDate);
     }
 
     @Override
     public List<BagCategory> getBagCategoriesOrderByNameFromA2Z() {
-        return null;
+        return bagCategoryRepository.getBagCategoriesOrderByNameFromA2Z();
     }
 
     @Override
     public List<BagCategory> getBagCategoriesOrderByNameFromZ2A() {
-        return null;
+        return bagCategoryRepository.getBagCategoriesOrderByNameFromZ2A();
     }
 
     @Override
     public List<BagCategory> getBagCategoriesOrderByPriceAsc() {
-        return null;
+        List<BagCategory> bagCategories = new ArrayList<>();
+        LinkedHashSet<Integer> cateIdList = bagServiceImpl.getBagCategoryIdOrderByPriceAsc();
+        cateIdList.forEach(cateId ->{
+            bagCategories.add(getBagCategoryByID(cateId));
+        });
+        return bagCategories;
     }
 
     @Override
     public List<BagCategory> getBagCategoriesOrderByPriceDesc() {
-        return null;
+        List<BagCategory> bagCategories = new ArrayList<>();
+        LinkedHashSet<Integer> cateIdlist = bagServiceImpl.getBagCategoryIdOrderByPriceDesc();
+        cateIdlist.forEach(cateId->{
+            bagCategories.add(getBagCategoryByID(cateId));
+        });
+        return bagCategories;
     }
 
     @Override
     public List<BagCategory> getBagCategoriesByNewestDate() {
-        return null;
+        return bagCategoryRepository.getBagCategoriesByNewestDate();
     }
 
     @Override
     public List<BagCategory> searchBagCategoryALikeByKeyword(String keyword) {
-        return null;
+        return bagCategoryRepository.searchBagCategoryALikeByKeyword("%"+keyword+"%");
     }
 }

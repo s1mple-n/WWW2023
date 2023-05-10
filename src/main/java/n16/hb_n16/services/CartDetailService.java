@@ -1,4 +1,4 @@
-package n16.hb_n16.service;
+package n16.hb_n16.services;
 
 import n16.hb_n16.entity.CartDetail;
 
