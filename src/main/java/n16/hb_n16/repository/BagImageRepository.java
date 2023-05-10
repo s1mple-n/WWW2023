@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface BagImageRepository extends JpaRepository<BagImage,Integer> {
-    @Query(value = "from BagImage where bag_id = :bagID")
+    @Query(value = "from BagImage where bag_id = :bagID",nativeQuery = true)
     List<BagImage> getBagImagesByBagId(@Param("bagID") int bagID);
 }
