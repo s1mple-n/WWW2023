@@ -2,20 +2,23 @@ package n16.hb_n16.controller;
 
 import n16.hb_n16.config.MyUserDetail;
 import n16.hb_n16.entity.User;
+import n16.hb_n16.services.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.ui.Model;
 
 public class UserSession {
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    User user = null;
-/*
-        if (principal instanceof ){
-        String username = ((MyUserDetail) principal).getUsername();
+    public static User getCurrentUser(UserService userService){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = null;
 
-      //  user = userService.getUserByUserName(username);
-    }
+        if (principal instanceof MyUserDetail){
+            String username = ((MyUserDetail) principal).getUsername();
+
+            user = userService.getUserByUserName(username);
+        }
 
         return user;
-}
+    }
 
     public static void getLoggedUserInfo(UserService userService, Model model){
         User currentUser = getCurrentUser(userService);
@@ -32,5 +35,5 @@ public class UserSession {
 
             model.addAttribute("userAvatar", tmpAvatar);
         }
-    }*/
+    }
 }
