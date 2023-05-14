@@ -68,10 +68,11 @@ public class MySpringSecurityConfig {
                                 .requestMatchers("/products/product/add_to_cart/**").hasRole(USER_ROLE)
                                 .requestMatchers("/cart/**").hasRole(USER_ROLE)
                                 .requestMatchers("/admin/**").permitAll()
+                                .anyRequest().authenticated()
 
                 )
                 .formLogin(form -> form
-                        .loginPage("/logon")
+                        .loginPage("/login")
                         .defaultSuccessUrl("/home")
                         .permitAll()
                 )

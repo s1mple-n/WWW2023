@@ -77,7 +77,7 @@ header__container
         header__icon
         header__profile-link header__profile-link--hej
         ">
-      <a th:if="${#request.userPrincipal} != null" th:href="@{/pa/account}" class="btn leading-icon btn--small btn--icon-tertiary min-w-[18px] flex flex-row justify-center item-center">
+      <a th:if="${request.getUserPrincipal() != null}" th:href="@{/pa/account}" class="btn leading-icon btn--small btn--icon-tertiary min-w-[18px] flex flex-row justify-center item-center">
           <span class="btn__inner btn-login-register">
                     <figure th:if="${userAvatar} != null" class="w-8 h-8 mr-2">
                         <img th:src="${userAvatar}" class="w-full h-full object-cover rounded-full">
@@ -88,7 +88,7 @@ header__container
                     <span class="btn__label" th:text="${userLastName}"></span>
           </span>
       </a>
-      <a th:unless="${#request.userPrincipal} != null" href="/login" class="
+      <a th:unless="${request.getUserPrincipal() != null}" href="/login" class="
             btn leading-icon btn--small btn--icon-tertiary
             ">
                 <span class="btn__inner btn-login-register">

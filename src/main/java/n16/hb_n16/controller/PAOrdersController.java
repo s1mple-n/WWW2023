@@ -28,6 +28,7 @@ public class PAOrdersController {
         this.saleOrderDetailService = saleOrderDetailService;
     }
 
+    @GetMapping("/processingOrders")
     public String showPAProcessingOrdersPage(Model model) {
         User currentUser = UserSession.getCurrentUser(userService);
         UserSession.getLoggedUserInfo(userService, model);
