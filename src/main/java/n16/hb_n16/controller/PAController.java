@@ -26,7 +26,7 @@ public class PAController {
     public String showPersonalAreaPage(Model model) {
         User currentUser = UserSession.getCurrentUser(userService);
 
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         if (currentUser.getAvatar() != null) {
             model.addAttribute("userAvatar", "data:image/png;base64," + currentUser.getAvatar());

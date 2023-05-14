@@ -32,7 +32,7 @@ public class ProductsController {
 
     @GetMapping("/all")
     public String showAllProducts(Model model) {
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
         List<BagCategory> bagCategoryList= bagCategoryService.getAllBagCategories();
 
         List<String> bagCategoryPriceList = bagService.listPrice(bagCategoryList);
@@ -47,7 +47,7 @@ public class ProductsController {
 
     @GetMapping("/all/filter")
     public String showAllProducts(Model model, @RequestParam String sort) {
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
         List<BagCategory> bagCategoryList = new ArrayList<>();
         if (sort.equals("1")) {
             bagCategoryList = bagCategoryService.getBagCategoriesOrderByNameFromA2Z();
@@ -71,7 +71,7 @@ public class ProductsController {
 
     @GetMapping("/newest")
     public String showNewestProducts(Model model) {
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         List<BagCategory> listBagCategory = bagCategoryService.getBagCategoriesByNewestDate();
 
@@ -86,7 +86,7 @@ public class ProductsController {
 
     @GetMapping("/product/{categoryId}")
     public String showProductDetail(@PathVariable("categoryId") int categoryId, Model model) {
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         BagCategory bagCategory = bagCategoryService.getBagCategoryByID(categoryId);
 

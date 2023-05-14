@@ -30,7 +30,7 @@ public class CartController {
 
     @GetMapping("/all")
     public String showCartPage(Model model) {
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
         User user = UserSession.getCurrentUser(userService);
         CartHeader cartHeader = cartHeaderService.getCartHeaderByID(user.getCustomerId());
         List<CartDetail> cartDetailList = cartDetailService.getCartDetailByCartHeaderID(cartHeader.getCustomerId());

@@ -30,7 +30,7 @@ public class PAOrdersController {
 
     public String showPAProcessingOrdersPage(Model model) {
         User currentUser = UserSession.getCurrentUser(userService);
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         String tmpAvatar = null;
         if (currentUser.getAvatar() != null) {
@@ -60,7 +60,7 @@ public class PAOrdersController {
     public String showPAShippingOrdersPage(Model model) {
         User currentUser = UserSession.getCurrentUser(userService);
 
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         if (currentUser.getAvatar() != null) {
             model.addAttribute("userAvatar", "data:image/png;base64," + currentUser.getAvatar());
@@ -87,7 +87,7 @@ public class PAOrdersController {
     public String showPAShippedOrdersPage(Model model){
         User currentUser = UserSession.getCurrentUser(userService);
 
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         if (currentUser.getAvatar() != null) {
             model.addAttribute("userAvatar", "data:image/png;base64," + currentUser.getAvatar());
@@ -114,7 +114,7 @@ public class PAOrdersController {
     public String showPAOrderDetails(Model model, @PathVariable("saleOrderId") int saleOrderId) {
         User currentUser = UserSession.getCurrentUser(userService);
 
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         if (currentUser.getAvatar() != null) {
             model.addAttribute("userAvatar", "data:image/png;base64," + currentUser.getAvatar());
@@ -149,7 +149,7 @@ public class PAOrdersController {
     public String cancelOrdersPage(Model model, @PathVariable("saleOrderId") int saleOrderId){
         User currentUser = UserSession.getCurrentUser(userService);
 
-        UserSession.getLoggedUserInfor(userService, model);
+        UserSession.getLoggedUserInfo(userService, model);
 
         if (currentUser.getAvatar() != null) {
             model.addAttribute("userAvatar", "data:image/png;base64," + currentUser.getAvatar());
