@@ -41,6 +41,13 @@ public class Bag implements Serializable {
         this.listBagReviews = listBagReviews;
     }
 
+    public Bag(BagCategory bagCategory, String color, BigDecimal price, int quantity) {
+        this.bagCategory = bagCategory;
+        this.color = color;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public Bag() {
     }
 
