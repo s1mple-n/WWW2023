@@ -19,23 +19,23 @@ public class LoginController {
 
 		if (user != null && user.getRole().equalsIgnoreCase("admin")) {
 			UserSession.getLoggedUserInfo(userService, model);
- 
-			model.addAttribute("pageTitle", "G9 - Quản lí đơn hàng");
+
+			model.addAttribute("pageTitle", "G16 - Quản lí đơn hàng");
 			return "redirect:/admin/all";
 		}
 
 		UserSession.getLoggedUserInfo(userService, model);
 
-		model.addAttribute("pageTitle", "G9 Bag Store");
+		model.addAttribute("pageTitle", "G16 Bag Store");
 
 		return "view_customer/index";
-	} 
+	}
 
 	@GetMapping("/logon")
 	public String loginPage() {
 		if(UserSession.getCurrentUser(userService) != null)
 			return "redirect:/";
-		
+
 		return "view_customer/login";
 	}
 }

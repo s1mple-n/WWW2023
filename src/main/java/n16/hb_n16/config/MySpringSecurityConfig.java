@@ -68,13 +68,18 @@ public class MySpringSecurityConfig {
                                 .requestMatchers("/products/product/add_to_cart/**").hasRole(USER_ROLE)
                                 .requestMatchers("/cart/**").hasRole(USER_ROLE)
                                 .requestMatchers("/admin/**").hasRole(ADMIN_ROLE)
-
+                                .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .loginPage("/logon")
-                        .defaultSuccessUrl("/home")
+                        .defaultSuccessUrl("/")
+                        .usernameParameter("email")
+                        .passwordParameter("password")
+                        .loginProcessingUrl("/authenUser")
                         .permitAll()
+
                 )
+
                 .logout(LogoutConfigurer::permitAll)
                 .httpBasic(Customizer.withDefaults());
         return http.build();
