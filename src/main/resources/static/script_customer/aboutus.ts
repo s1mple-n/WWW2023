@@ -101,41 +101,41 @@ function renderAllDevInfoToHtml(devArr: Developer[]): string{
     let dev1 = new Developer(
         '../imgs/aboutus_demo_cover_photo.jpg',
         true,
-        'Họ Tên',
-        'MSSV',
-        'Lớp',
-        'email',
-        'link github'
+        'Nguyễn Dương Minh Huy',
+        '19481471',
+        'DHKTPM15A',
+        'minhhuy123nguyen@gmail.com',
+        'https://github.com/s1mple-n'
     )
 
     let dev2 = new Developer(
         '../imgs/aboutus_demo_cover_photo.jpg',
         false,
-        'Họ Tên',
-        'MSSV',
-        'Lớp',
-        'email',
-        'link github'
+        'Hoàng Thị Tố Thùy',
+        '19432541',
+        'DHKTPM15A',
+        'hoangtothuy01@gmail.com',
+        'https://github.com/ThuyHoang-01'
     )
 
     let dev3 = new Developer(
         '../imgs/aboutus_demo_cover_photo.jpg',
         false,
-        'Họ Tên',
-        'MSSV',
-        'Lớp',
-        'email',
-        'link github'
+        'Nguyễn Văn Phát',
+        '19483821 ',
+        'DHKTPM15A ',
+        'nguyenvanphat911@gmail.com',
+        'https://github.com/Phatjiro'
     )
 
     let dev4 = new Developer(
         '../imgs/aboutus_demo_cover_photo.jpg',
         false,
-        'Họ Tên',
-        'MSSV',
-        'Lớp',
-        'email',
-        'link github'
+        'Cao A Minh',
+        '19533901',
+        'DHKTPM15A',
+        'caoaminh12an1nh2019@gmail.com',
+        'https://github.com/CaoAMinh'
     )
 
     let devArr: Developer[] = new Array(dev1, dev2, dev3, dev4)
