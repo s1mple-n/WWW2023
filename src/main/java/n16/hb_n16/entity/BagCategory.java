@@ -46,6 +46,17 @@ public class BagCategory implements Serializable {
         this.listBags = listBags;
     }
 
+    public BagCategory(Brand brand, String name, String size, double weight, String coverPhoto, String shortDescription, String longDescription, LocalDate importDate) {
+        this.brand = brand;
+        this.name = name;
+        this.size = size;
+        this.weight = weight;
+        this.coverPhoto = coverPhoto;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+        this.importDate = importDate;
+    }
+
     public BagCategory() {
     }
 
