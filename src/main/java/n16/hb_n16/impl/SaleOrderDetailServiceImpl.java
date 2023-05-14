@@ -24,7 +24,7 @@ public class SaleOrderDetailServiceImpl implements SaleOrderDetailService {
     }
 
     @Override
-    public List<SaleOrderDetail> getAllSaleOrderDetailsBySaleOrderID(int saleOrderID) {
+    public List<SaleOrderDetail> getSaleOrderDetailsBySaleOrderID(int saleOrderID) {
         return saleOrderDetailRepository.getSaleOrderDetailsBySaleOrderID(saleOrderID);
     }
 
