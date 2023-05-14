@@ -143,7 +143,7 @@ public class AdminOrderController {
         UserSession.getLoggedUserInfo(userService, model);
         User currentUser = UserSession.getCurrentUser(userService);
         model.addAttribute("user", currentUser);
-        List<SaleOrderDetail> listOrderDetails = saleOrderDetailService.getAllSaleOrderDetailsBySaleOrderID(saleOrderId);
+        List<SaleOrderDetail> listOrderDetails = saleOrderDetailService.getSaleOrderDetailsBySaleOrderID(saleOrderId);
         model.addAttribute("listOrderDetails", listOrderDetails);
         return "/view_admin/sale-order-view";
     }
