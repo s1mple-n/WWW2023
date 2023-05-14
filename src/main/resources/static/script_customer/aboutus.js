@@ -26,10 +26,10 @@ function renderAllDevInfoToHtml(devArr){
     return html;
 };
 (function (){
-    var dev1 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', true, 'Họ Tên', 'MSSV', 'DHKTMPM15A', 'quantu211154@gmail.com', 'https://github.com/quantudev211154');
-    var dev2 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Họ Tên', 'MSSV', 'DHKTMPM15B', 'quantu211154@gmail.com', 'https://github.com/nubmaster-69');
-    var dev3 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Họ Tên', 'MSSV', 'DHKTMPM15A', 'thanhhoai160518@gmail.com', 'https://github.com/nth090801');
-    var dev4 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Họ Tên', 'MSSV', 'DHKTMPM15A', 'lamdavid821@gmail.com', 'https://github.com/lamzuong');
+    var dev1 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', true, 'Nguyễn Dương Minh Huy', '19481471', 'DHKTMPM15A', 'minhhuy123nguyen@gmail.com', 'https://github.com/s1mple-n');
+    var dev2 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Hoàng Thị Tố Thùy', '19432541', 'DHKTMPM15A', 'hoangtothuy01@gmail.com', 'https://github.com/ThuyHoang-01');
+    var dev3 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Nguyễn Văn Phát', '19483821', 'DHKTMPM15A', 'nguyenvanphat911@gmail.com', 'https://github.com/Phatjiro');
+    var dev4 = new Developer('../imgs/aboutus_demo_cover_photo.jpg', false, 'Cao A Minh', '19533901', 'DHKTMPM15A', 'caoaminh12an1nh2019@gmail.com', 'https://github.com/CaoAMinh');
     var devArr = new Array(dev1, dev2, dev3, dev4);
     var mainWrapper = document.querySelector('.main__wrapper');
     mainWrapper.innerHTML = renderAllDevInfoToHtml(devArr);

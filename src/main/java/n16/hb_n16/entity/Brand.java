@@ -24,6 +24,10 @@ public class Brand implements Serializable {
         this.listBagCategories = listBagCategories;
     }
 
+    public Brand(String name) {
+        this.name = name;
+    }
+
     public Brand() {
     }
 

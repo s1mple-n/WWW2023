@@ -35,6 +35,11 @@ public class BagCategoryServiceImpl implements BagCategoryService {
     }
 
     @Override
+    public void addOrUpdateBagCategory(BagCategory bagCategory) {
+        bagCategoryRepository.save(bagCategory);
+    }
+
+    @Override
     public List<BagCategory> getBagCategoriesByName(String name) {
         return bagCategoryRepository.getBagCategoriesByName(name);
     }
