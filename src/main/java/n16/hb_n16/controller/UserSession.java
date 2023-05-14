@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 
 public class UserSession {
+
     static Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     User user = null;
 
@@ -16,6 +17,7 @@ public class UserSession {
         User user = null;
 
         if (principal instanceof MyUserDetail) {
+
             String username = ((MyUserDetail) principal).getUsername();
 
             user = userService.getUserByUserName(username);
@@ -39,6 +41,5 @@ public class UserSession {
 
             model.addAttribute("userAvatar", tmpAvatar);
         }
-
     }
 }
