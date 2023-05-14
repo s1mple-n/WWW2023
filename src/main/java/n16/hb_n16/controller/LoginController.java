@@ -31,7 +31,7 @@ public class LoginController {
 		return "view_customer/index";
 	} 
 
-	@GetMapping("/login")
+	@GetMapping("/logon")
 	public String loginPage() {
 		if(UserSession.getCurrentUser(userService) != null)
 			return "redirect:/";
